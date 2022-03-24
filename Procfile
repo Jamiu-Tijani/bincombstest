@@ -1,0 +1,1 @@
+web: gunicorn bintest.wsgi --log-file -

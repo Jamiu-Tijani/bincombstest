@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/inedex.css' %}">
+</head>
+<body>
+      <div class="rightContainer">
+        
+        <h3>Scroll Down To View Next Page</h3>
+        <div class="card-one">
+          
+          <h3>Votes</h3>
+          
+            {% for key,values in apu.items %}
+          <div class="container" style="flex-direction: row;">
+            
+            <div class="topLabels">
+              
+              <label>{{key}}</label>
+              {% for ke,val in values.items %}
+              <label>%{{ val.2 }} </label>
+            </div>
+            
+            <div class="progress">
+                <div class="bar one" style='width:   {{ val.2 }}%;'></div>
+              </div>
+            
+            <label style="font-weight: bold;"> {{ val.1 }} Votes</label>
+          </div>
+          {% endfor %}
+          {% endfor %}
+
+          <form action="/page2">
+            <button class="button"> Next Page</button>
+          </form>
+          
+</body>
+</html>

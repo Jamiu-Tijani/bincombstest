@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/inedex.css' %}">
+</head>
+<body>
+      <div class="rightContainer">
+        
+        
+        <div  style= "justify-content: space-evenly; align-items: center; flex-direction: row;">
+          
+          <h3 style="padding-bottom: .2cm;">Check Sum Total for  Local Governments</h3>
+          <form action="/getResults" method="get">
+          <select  name="LG" id="LG" class="round" >
+            <option value="{{lga}}" id="LG" >Select Local Government</option>
+            {% for lga in localG %}
+            <option value="{{lga}}" id="LG">{{lga}}</option>
+            {% endfor %}
+          </select> <button class="button">Submit</button>
+        </form>
+         </div>
+      </div>
+      <div class="card-one">
+
+        <h3>{% for key,values in Result.items %}
+        </h3>
+        <h4 style="text-transform: capitalize;"> {{key}} </h4>
+          {%for k,v in values %}
+           {{v}}  <br> {{k}}
+          {% endfor %}
+
+          {% endfor %}
+
+
+      </div>
+        
+    
+</body>
+</html>
