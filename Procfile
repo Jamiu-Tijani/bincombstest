@@ -1,1 +1,1 @@
-web: gunicorn bintest.wsgi --log-file -
+web: gunicorn bincom.wsgi --log-file -
