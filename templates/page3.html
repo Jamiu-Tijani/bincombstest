@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/inedex.css' %}">
+</head>
+<body style="flex-direction: column;">
+    <p>{{message}}</p> <p>{{err}}</p>
+    
+      <div style="flex-direction: column; align-items: baseline; justify-content: baseline  ;">
+          <form action="/reg" method="get">
+              <h3>New or Existing Polling Unit</h3><input placeholder="Polling Unit Name" name = "pu"/>
+              <select name="pn" id="pn">
+                  <option> Select Party</option>
+                  {% for party in ap %}
+                  <option value="{{party}}">{{party}}</option>
+                  {% endfor %}
+              </select>
+              <input placeholder="Party Result"   name="ps"/>
+              
+
+            <button class="button"> Submit</button>
+          </form>
+      </div>
+          
+</body>
+</html>

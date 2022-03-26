@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/inedex.css' %}">
 </head>
 <body>
+
       <div class="rightContainer">
         
         
@@ -23,21 +24,27 @@
             {% endfor %}
           </select> <button class="button">Submit</button>
         </form>
+        <form action="/regPol" >
+          <button> Page 3</button>
+        </form>
          </div>
       </div>
       <div class="card-one">
 
-        <h3>{% for key,values in Result.items %}
-        </h3>
-        <h4 style="text-transform: capitalize;"> {{key}} </h4>
+    {% for key,values in Result.items %}
+
+       
+        <h4 style="text-transform: capitalize;"> {{key}} Polling Unit</h4>
+        <h5>Party Name   Score </h5>
           {%for k,v in values %}
-           {{v}}  <br> {{k}}
+          <h5> {{k}}            {{v}} </h5> 
           {% endfor %}
 
           {% endfor %}
 
 
       </div>
+
         
     
 </body>
